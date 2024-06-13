@@ -65,7 +65,7 @@ The following endpoints are available:
 ```json
 Hello world
 ```
-<h3 id="get-object">GET /</h3>
+<h3 id="get-object">GET /data</h3>
 
 **RESPONSE**
 ```json
