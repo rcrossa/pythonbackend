@@ -3,7 +3,8 @@
 <p align="center">
  <a href="#tech">Technologies</a> • 
  <a href="#started">Getting Started</a> • 
-  <a href="#routes">API Endpoints</a> •
+  <a href="#routes">API Endpoints</a> 
+  <a href="#swagger">Swagger</a> •
  <a href="#colab">Collaborators</a> •
  <a href="#contribute">Contribute</a>
 </p>
@@ -47,8 +48,15 @@ How to start your project
 - cd project-name
 - python3 -m venv venv
 - source venv/bin/activate 
+```
+<h4> In virtual enviroment run the following commands:</h4>
+
+```bash
+- pip install flask
+- pip3 install flask_swagger_ui
 - python3 run.py
 ```
+
 
  <h2 id="routes">📍 API Endpoints</h2>
 
@@ -78,6 +86,10 @@ Hello world
    }
 ]
 ```
+
+<h3 id="swagger">Swagger</h3>
+<h4>You can see the apy info in the path: /swagger</h4>
+
 
 <!--<h3 id="post-auth-detail">POST /authenticate</h3>
 
