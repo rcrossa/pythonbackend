@@ -1,0 +1,35 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Access API",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/": {
+        "get": {
+          "description": "Returns a test message",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation"
+            }
+          }
+        }
+      },
+      "/data": {
+        "get":{
+            "description": "Returns a test object",
+            "produces":[
+                "application/json"
+            ],
+            "responses":{
+                "200":{
+                    "description": "Successful operation"
+                }
+            }
+        }
+      }
+    }
+}
