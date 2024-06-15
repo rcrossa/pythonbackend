@@ -54,7 +54,7 @@ How to start your project
 ```bash
 - pip install flask
 - pip3 install flask_swagger_ui
-- python3 run.py
+- python3 index.py
 ```
 
 
