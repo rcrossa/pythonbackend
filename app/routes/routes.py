@@ -3,7 +3,7 @@ from flask import Blueprint
 
 from app.views.views import index, getInformation
 
-rout = Blueprint('rout', __name__)
+route = Blueprint('rout', __name__)
 
-rout.route('/', methods=['GET'])(index)
-rout.route('/data', methods=['GET'])(getInformation)
+route.route('/', methods=['GET'])(index)
+route.route('/data', methods=['GET'])(getInformation)
