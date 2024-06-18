@@ -54,6 +54,9 @@ How to start your project
 ```bash
 - pip install flask
 - pip3 install flask_swagger_ui
+- pip3 install flask_sqlalchemy
+- pip install mysqlclient
+- pip install python-dotenv  
 - python3 index.py
 ```
 
