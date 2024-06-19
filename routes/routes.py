@@ -36,7 +36,7 @@ def new():
 
 @films_blueprint.route('/all')
 def all():
-    return "update films"
+    return render_template('crud-movies.html')
 
 @films_blueprint.route('/delete')
 def delete():
