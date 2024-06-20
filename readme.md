@@ -17,7 +17,7 @@
 - list of all technologies you used
 - Python
 - Flask
-- Sql
+- MySql
 
 <h2 id="started">🚀 Getting started</h2>
 
@@ -29,7 +29,7 @@ Here you list all prerequisites necessary for running your project. For example:
 
 - [Python](https://www.python.org)
 - [Flask](https://github.com)
-- [Sql](https://www.mysql.com)
+- [MySql](https://www.mysql.com)
 
 <h3>Cloning</h3>
 
@@ -44,12 +44,14 @@ git clone git@github.com:rcrossa/pythonbackend.git
 
 How to start your project
 
+<h4>1)In your terminal run the following commands:</h4>
+
 ```bash
 - cd project-name
 - python3 -m venv venv
 - source venv/bin/activate 
 ```
-<h4> In virtual enviroment run the following commands:</h4>
+<h4>2) In virtual enviroment run the following commands:</h4>
 
 ```bash
 - pip install flask
@@ -59,7 +61,9 @@ How to start your project
 - pip install python-dotenv  
 - python3 index.py
 ```
+<h4>3) Create a file .env with the following data:</h5>
 
+- SQLALCHEMY_DATABASE_URI=mysql://<Your_user>:<your_passwword>@localhost/appdb
 
  <h2 id="routes">📍 API Endpoints</h2>
 
