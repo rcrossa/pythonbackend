@@ -24,16 +24,38 @@ class Movie{
 // console.log(movies);
 
 function showMovies(){
-    
-    //BUSCAR LO QUE HAY EN LOCAL STORAGE
-    let movies = JSON.parse(localStorage.getItem('movies')) || [];
+    // Crear una nueva instancia de XMLHttpRequest
+    let xhr = new XMLHttpRequest();
+    let films = [];
+    // Configurar el tipo de solicitud, el método HTTP y la URL del endpoint
+    xhr.open('GET', 'http://127.0.0.1:5000/all', true);
 
+    // Definir una función de callback para manejar la respuesta
+    xhr.onreadystatechange = function() {
+        // Verificar si la solicitud ha sido completada (readyState 4) y fue exitosa (status 200)
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+    
+            // Convert the object with numeric keys into an array
+            films = Object.keys(response).map(key => response[key]);
+            Object.keys(response).map(key => {
+                for (let i = 0; i < response[key].length; i++) {
+                    films.push(response[key][i]);
+                }
+            });
+
+
+            //---------------------------------------------
+
+             //BUSCAR LO QUE HAY EN LOCAL STORAGE
+    let movies = JSON.parse(localStorage.getItem('movies')) || [];
+    console.log('movies', movies);
     //buscar elemento HTML donde quiero insertar las peliculas
     const tbodyMovies = document.querySelector('#list-table-movies tbody');
     // const tbodyMovies = document.getElementById('#tbody-table-movies');
     //limpio el contenido de la tabla
     tbodyMovies.innerHTML = '';
-    movies.forEach(movie => {
+    films.forEach(movie => {
         //TEMPLATE STRING - TEMPLATE LITERAL 
         const tr = `
                     <tr>
@@ -52,6 +74,20 @@ function showMovies(){
         `;
         tbodyMovies.insertAdjacentHTML('beforeend',tr);
     });
+            //---------------------------------------------
+
+            // Logging to check the transformation
+            console.log(films);
+    
+            // Call the function to render movies
+            // renderMovies(films);
+        }
+    };
+
+    // Enviar la solicitud
+    xhr.send();
+
+   
 
 }
 
@@ -99,6 +135,29 @@ function saveMovie(){
                 inputBanner.value,
             );
             movies.push(newMovie);
+             // Obtener los datos del formulario
+            const form = document.getElementById("form-movie");
+            const formData = new FormData(form);
+            console.log("test",formData);
+            // Convertir los datos a un objeto JSON
+            const jsonObject = {};
+            formData.forEach((value, key) => {
+                jsonObject[key] = value;
+            });
+            // Realizar la solicitud POST con los datos JSON
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://127.0.0.1:5000/newmovie", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+        
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 201) {
+                    console.log(JSON.parse(xhr.responseText));
+                } else {
+                    console.log(`Error: ${xhr.status} - ${xhr.responseText}`);
+                }
+            };
+
+            xhr.send(JSON.stringify(jsonObject));
         }
 
         //Se actualiza el array de peliculas en el localstorage
@@ -162,9 +221,35 @@ function deleteMovie(movieId){
     if(movieToDelete){
         //se utiliza el metodo filter para actualizar el array de movies, sin tener el elemento encontrado en cuestion.
         movies = movies.filter(movie => movie.id !== movieToDelete.id);
+
         //se actualiza el localstorage
         localStorage.setItem('movies',JSON.stringify(movies));
         showMovies();
+                     // Obtener los datos del formulario
+                    //  const form = document.getElementById("form-movie");
+                    //  const formData = new FormData(form);
+                    //  console.log("test",formData);
+                    //  // Convertir los datos a un objeto JSON
+                    //  const jsonObject = {};
+                    //  formData.forEach((value, key) => {
+                    //      jsonObject[key] = value;
+                    //  });
+                     // Realizar la solicitud POST con los datos JSON
+                     const xhr = new XMLHttpRequest();
+
+                     console.log("id", movieId);
+                     xhr.open("DELETE", `http://127.0.0.1:5000/deletemovie/${movieId}`, true);
+                     
+                     xhr.onload = function () {
+                         if (xhr.readyState == 4 && xhr.status == 200) {
+                             console.log("Movie deleted successfully:", JSON.parse(xhr.responseText));
+                         } else {
+                             console.log(`Error: ${xhr.status} - ${xhr.responseText}`);
+                         }
+                     };
+                     
+                     // No se necesita enviar un JSON con el método DELETE ya que el ID se pasa por la URL
+                     xhr.send();
         Swal.fire({
             title: 'Exito!',
             text: 'La pelicula fue eliminada.',
