@@ -1,14 +1,14 @@
 from flask import Flask
 from flask_cors import CORS
-from flask_swagger_ui import get_swaggerui_blueprint
-from app.routes.routes import route
+from app.routes.routes import rout
 from static import swagger
+from utils.db import init_app
 
 app = Flask(__name__)
 
 
 app.register_blueprint(swagger.swagger_ui_blueprint, url_prefix=swagger.SWAGGER_URL)
-app.register_blueprint(route)
+app.register_blueprint(rout)
 
 CORS(app)
 if __name__ == '__main__':

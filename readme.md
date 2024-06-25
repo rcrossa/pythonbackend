@@ -54,6 +54,9 @@ How to start your project
 ```bash
 - pip install flask
 - pip3 install flask_swagger_ui
+- pip install mysql-conector-python
+- pip install python-dotenv
+- pip install flask-cors
 - python3 index.py
 ```
 
