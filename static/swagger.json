@@ -1,35 +1,99 @@
 {
-    "swagger": "2.0",
-    "info": {
-      "title": "Access API",
-      "version": "1.0.0"
-    },
-    "paths": {
-      "/": {
-        "get": {
-          "description": "Returns a test message",
-          "produces": [
-            "application/json"
-          ],
-          "responses": {
-            "200": {
-              "description": "Successful operation"
-            }
-          }
-        }
-      },
-      "/data": {
-        "get":{
-            "description": "Returns a test object",
-            "produces":[
-                "application/json"
-            ],
-            "responses":{
-                "200":{
-                    "description": "Successful operation"
-                }
-            }
-        }
-      }
-    }
+	"swagger": "2.0",
+	"info": {
+		"title": "Access API",
+		"version": "1.0.0"
+	},
+	"paths": {
+		"/": {
+			"get": {
+				"description": "Returns a test message",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Successful operation"
+					}
+				}
+			}
+		},
+		"/data": {
+			"get": {
+				"description": "Returns a test object",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Successful operation"
+					}
+				}
+			}
+		},
+		"/api/movies/": {
+			"get": {
+				"description": "Returns a test object",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"Movie": {
+							"banner": "inception.jpg",
+							"director": "Christopher Nolan",
+							"id_movie": 3,
+							"release_date": "Fri, 22 Feb 2222 00:00:00 GMT",
+							"title": "test1"
+						}
+					}
+				}
+			}
+		},
+		"/api/movies/1": {
+			"get": {
+				"description": "Returns a object",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"body": {
+							"banner": "inception.jpg",
+							"director": "Christopher warret",
+							"id_movie": 3,
+							"release_date": "Fri, 22 Feb 2222 00:00:00 GMT",
+							"title": "test1"
+						}
+					}
+				}
+			}
+		},
+		"/api/movies/2": {
+			"put": {
+				"description": "Returns a object",
+				"parameters": {
+					"name": "access data",
+					"in": "body",
+					"description": "JSON data for the api",
+					"required": true,
+                    "schema": {
+                      "$ref": "/app/models/movie.py"
+
+				},
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"body": {
+							"responses": "Movie updated"
+						}
+					}
+				}
+			}
+		}
+	},
+	"Transform": "AWS::Serverless-2016-10-31"
+}
 }
