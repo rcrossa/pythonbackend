@@ -20,9 +20,11 @@ def get_all_movies():
 def create_movie():
     #recepcionando los datos enviados en la peticion en formato JSON
     data = request.json
+    print(data)
     new_movie = Movie(
         title=data['title'],
         director=data['director'],
+        rating=data['rating'],
         release_date=data['release_date'],
         banner=data['banner']
     )
@@ -36,6 +38,7 @@ def update_movie(movie_id):
     data = request.json
     movie.title = data['title']
     movie.director = data['director']
+    movie.rating = data['rating']
     movie.release_date = data['release_date']
     movie.banner = data['banner']
     movie.save()
