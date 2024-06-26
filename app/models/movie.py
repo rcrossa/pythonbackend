@@ -68,7 +68,7 @@ class Movie:
             """, (self.title, self.director, self.rating, self.release_date, self.banner, self.id_movie))
         else:
             cursor.execute("""
-                INSERT INTO movies (title, director,rating, release_date, banner) VALUES (%s, %s, %s, %s)
+                INSERT INTO movies (title, director,rating, release_date, banner) VALUES (%s, %s, %s, %s, %s)
             """, (self.title, self.director,self.rating, self.release_date, self.banner))
             self.id_movie = cursor.lastrowid
         db.commit()
