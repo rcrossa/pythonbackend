@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from app.routes.routes import rout
 from static import swagger
-from utils.db import init_app
+# from utils.db import init_app
 
 app = Flask(__name__)
 
