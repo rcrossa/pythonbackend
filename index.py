@@ -18,6 +18,7 @@ CORS(
                 "http://localhost",
                 "http://codoacodo.duckdns.org:5000",
                 "http://127.0.0.1:5000",
+                "https://main--starlit-mochi-82dea3.netlify.app",
             ]
         }
     },
