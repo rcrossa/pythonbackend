@@ -49,6 +49,9 @@ How to start your project
 - python3 -m venv venv
 - source venv/bin/activate 
 ```
+<h3>Dotenv</h3>
+<b>Create an .env file in root directory</b> 
+
 <h4> In virtual enviroment run the following commands:</h4>
 
 ```bash
