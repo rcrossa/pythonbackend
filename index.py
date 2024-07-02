@@ -10,17 +10,6 @@ app = Flask(__name__)
 app.register_blueprint(swagger.swagger_ui_blueprint, url_prefix=swagger.SWAGGER_URL)
 app.register_blueprint(rout)
 
-CORS(
-    app,
-    resources={
-        r"/*": {
-            "origins": [
-                "http://localhost",
-                "http://127.0.0.1:5000/",
-                "https://starlit-mochi-82dea3.netlify.app/",
-            ]
-        }
-    },
-)
+CORS(app)
 if __name__ == '__main__':
     app.run(debug=True)
