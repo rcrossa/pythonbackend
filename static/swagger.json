@@ -39,12 +39,26 @@
 				],
 				"responses": {
 					"200": {
-						"Movie": {
-							"banner": "inception.jpg",
-							"director": "Christopher Nolan",
-							"id_movie": 3,
-							"release_date": "Fri, 22 Feb 2222 00:00:00 GMT",
-							"title": "test1"
+						"description": "Successful operation",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"banner": {
+									"type": "string"
+								},
+								"director": {
+									"type": "string"
+								},
+								"id_movie": {
+									"type": "integer"
+								},
+								"release_date": {
+									"type": "string"
+								},
+								"title": {
+									"type": "string"
+								}
+							}
 						}
 					}
 				}
@@ -58,12 +72,26 @@
 				],
 				"responses": {
 					"200": {
-						"body": {
-							"banner": "inception.jpg",
-							"director": "Christopher warret",
-							"id_movie": 3,
-							"release_date": "Fri, 22 Feb 2222 00:00:00 GMT",
-							"title": "test1"
+						"description": "Successful operation",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"banner": {
+									"type": "string"
+								},
+								"director": {
+									"type": "string"
+								},
+								"id_movie": {
+									"type": "integer"
+								},
+								"release_date": {
+									"type": "string"
+								},
+								"title": {
+									"type": "string"
+								}
+							}
 						}
 					}
 				}
@@ -71,29 +99,93 @@
 		},
 		"/api/movies/2": {
 			"put": {
-				"description": "Returns a object",
-				"parameters": {
-					"name": "access data",
-					"in": "body",
-					"description": "JSON data for the api",
-					"required": true,
-                    "schema": {
-                      "$ref": "/app/models/movie.py"
-
-				},
+				"description": "Updates a movie object",
+				"parameters": [
+					{
+						"name": "access data",
+						"in": "body",
+						"description": "JSON data for the API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Movie"
+						}
+					}
+				],
 				"produces": [
 					"application/json"
 				],
 				"responses": {
 					"200": {
-						"body": {
-							"responses": "Movie updated"
+						"description": "Movie updated",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"response": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/movies": {
+			"post": {
+				"description": "Creates a new movie object",
+				"parameters": [
+					{
+						"name": "access data",
+						"in": "body",
+						"description": "JSON data for the API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Movie"
+						}
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Movie created",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"response": {
+									"type": "string"
+								}
+							}
 						}
 					}
 				}
 			}
 		}
 	},
+	"definitions": {
+		"Movie": {
+			"type": "object",
+			"properties": {
+				"banner": {
+					"type": "string"
+				},
+				"director": {
+					"type": "string"
+				},
+				"id_movie": {
+					"type": "integer"
+				},
+				"rating": {
+					"type": "number"
+				},
+				"release_date": {
+					"type": "string"
+				},
+				"title": {
+					"type": "string"
+				}
+			}
+		}
+	},
 	"Transform": "AWS::Serverless-2016-10-31"
-}
 }
