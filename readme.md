@@ -71,83 +71,15 @@ The following endpoints are available:
 | route               | description                                          
 |----------------------|-----------------------------------------------------
 | <kbd>GET /</kbd>     | retrieve a text example [response details](#get-text)
-| <kbd>GET /api/movies</kbd>     | retrieve an object [response details](#get-object)
-| <kbd>GET /api/movies/{id}</kbd>     | retrieve an object [response details](#get-movieby-id)
-| <kbd>POST /api/movies/</kbd>     | retrieve a response [response details](#create-movie)
-| <kbd>PUT /api/movies/{id}</kbd>     | retrieve a response [response details](#get-movie)
-| <kbd>DELETE /api/movies/{id}</kbd>     | retrieve a response [response details](#delete-movie)
+| <kbd>GET /api/movies</kbd>     | retrieve an object 
+| <kbd>GET /api/movies/{id}</kbd>     | retrieve an object 
+| <kbd>POST /api/movies/</kbd>     | retrieve a string response 
+| <kbd>PUT /api/movies/{id}</kbd>     | retrieve a string response
+| <kbd>DELETE /api/movies/{id}</kbd>     | retrieve a string response
 
-
-<!-- <h3 id="get-text">GET /</h3>
-
-**RESPONSE**
-```html
-<h1>Hola mundo con flask 🐍</h1>
-```
-<h3 id="get-object">GET /api/movies</h3>
-
-**RESPONSE**
-```json
-[
-    {
-        "banner": "1",
-        "director": "teste",
-        "id_movie": 1,
-        "rating": "3",
-        "release_date": "Fri, 22 Mar 2222 00:00:00 GMT",
-        "title": "teste"
-    }
-]
-```
-<h3 id="get-movieby-id">GET /api/movies/{id}</h3>
-
-**RESPONSE**
-```json
-{
-    "banner": "1",
-    "director": "teste",
-    "id_movie": 1,
-    "rating": [
-        3
-    ],
-    "release_date": "Fri, 22 Mar 2222 00:00:00 GMT",
-    "title": "teste"
-}
-```
-<h3 id="create-movie">POST /api/movies/</h3>
-
-**RESPONSE**
-```json
-{
-    "response": "Movie created successfully"
-}
-```
-<h3 id="update-movie">PUT /api/movies/{id}</h3>
-
-**RESPONSE**
-```json
-{
-    "banner": "1",
-    "director": "teste",
-    "id_movie": 1,
-    "rating": [
-        3
-    ],
-    "release_date": "Fri, 22 Mar 2222 00:00:00 GMT",
-    "title": "teste"
-}
-```
-<h3 id="delete-movie">DELETE /api/movies/{id}</h3>
-
-**RESPONSE**
-```json
-{
-  "response": "Movie deleted successfully"
-}
-``` -->
 
 <h3 id="swagger">Swagger</h3>
-<h4>You can see information related to swagger in the path: /swagger</h4>
+<h4>You can see information related to endpoints in the path:  <kbd> /swagger</kbd></h4>
 
 
 <h2 id="colab">🤝 Collaborators</h2>
