@@ -5,8 +5,8 @@
  <a href="#started">Getting Started</a> • 
   <a href="#routes">API Endpoints</a> 
   <a href="#swagger">Swagger</a> •
- <!-- <a href="#colab">Collaborators</a> •
- <a href="#contribute">Contribute</a> -->
+ <a href="#colab">Collaborators</a> •
+ <!-- <a href="#contribute">Contribute</a> -->
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@ Here you describe how to run your project locally
 
 <h3>Prerequisites</h3>
 
-Here you list all prerequisites necessary for running your project. For example:
+Here you list all prerequisites necessary for running your project:
 
 - [Python](https://www.python.org)
 - [Flask](https://github.com)
@@ -48,19 +48,19 @@ How to start your project
 - cd project-name
 - python3 -m venv venv
 - source venv/bin/activate 
+- pip install -r requirement.txt
 ```
-<h3>Dotenv</h3>
-<b>Create an .env file in root directory</b> 
+<b>Observation: if you have any error related python dependency please intall manually.</b>
 
-<h4> In virtual enviroment run the following commands:</h4>
+<h3>Dotenv</h3>
+<b>Create an .env file in root directory and you need to complete the following information related to the database:</b> 
 
 ```bash
-- pip install flask
-- pip3 install flask_swagger_ui
-- pip install mysql-conector-python
-- pip install python-dotenv
-- pip install flask-cors
-- python3 index.py
+- DB_USERNAME=the username 
+- DB_PASSWORD=the password 
+- DB_HOST= the hostname 
+- DB_PORT=the port 
+- DB_NAME= the name 
 ```
 
 
@@ -150,22 +150,6 @@ The following endpoints are available:
 <h4>You can see information related to swagger in the path: /swagger</h4>
 
 
-<!--<h3 id="post-auth-detail">POST /authenticate</h3>
-
-**REQUEST**
-```json
-{
-  "username": "fernandakipper",
-  "password": "4444444"
-}
-``` -->
-
-<!-- **RESPONSE**
-```json
-{
-  "token": "OwoMRHsaQwyAgVoc3OXmL1JhMVUYXGGBbCTK0GBgiYitwQwjf0gVoBmkbuyy0pSi"
-}
-
 <h2 id="colab">🤝 Collaborators</h2>
 
 Special thank you for all people that contributed for this project.
@@ -174,32 +158,33 @@ Special thank you for all people that contributed for this project.
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/61896274?v=4" width="100px;" alt="Fernanda Kipper Profile Picture"/><br>
+        <img src="https://avatars.githubusercontent.com/u/28865492?v=4" width="100px;" alt="Roberto Rossa Profile Picture"/><br>
         <sub>
-          <b>Fernanda Kipper</b>
+          <b>Roberto Rossa</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://t.ctcdn.com.br/n7eZ74KAcU3iYwnQ89-ul9txVxc=/400x400/smart/filters:format(webp)/i490769.jpeg" width="100px;" alt="Elon Musk Picture"/><br>
+        <img src="https://avatars.githubusercontent.com/u/49814034?v=4" width="100px;" alt="Jose Arrese Profile Picture"/><br>
         <sub>
-          <b>Elon Musk</b>
+          <b>Jose Arrese</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
+        <img src="https://avatars.githubusercontent.com/u/20940000?v=4" width="100px;" 
+        alt="Lucas Giurastante Profile Picture"/><br>
         <sub>
-          <b>Steve Jobs</b>
+          <b>Lucas Giurastante</b>
         </sub>
       </a>
     </td>
   </tr>
 </table>
 
-<h2 id="contribute">📫 Contribute</h2>
+<!-- <h2 id="contribute">📫 Contribute</h2>
 
 Here you will explain how other developers can contribute to your project. For example, explaining how can create their branches, which patterns to follow and how to open an pull request
 
